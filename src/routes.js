@@ -1,5 +1,5 @@
 import React from "react";
-import { TabNavigator, StackNavigator } from "react-navigation";
+import { DrawerNavigator, StackNavigator } from "react-navigation";
 import { MaterialIcons } from "@expo/vector-icons";
 
 import Contacts from "./screens/Contacts";
@@ -10,9 +10,14 @@ import Options from "./screens/Options";
 
 import colors from "./utils/colors";
 
-const getTabBarIcon = icon => ({ tintColor }) => (
-  <MaterialIcons name={icon} size={26} style={{ color: tintColor }} />
+const getDrawerItemIcon = icon => ({ tintColor }) => (
+  <MaterialIcons name={icon} size={22} style={{ color: tintColor }} />
 );
+
+// ** UNCOMMENT AND ADD TABNAVIGATOR IMPORT to switch to tabs
+// const getTabBarIcon = icon => ({ tintColor }) => (
+//   <MaterialIcons name={icon} size={26} style={{ color: tintColor }} />
+// );
 
 const ContactsStack = StackNavigator(
   {
@@ -26,7 +31,7 @@ const ContactsStack = StackNavigator(
   {
     initialRouteName: "Contacts",
     navigationOptions: {
-      tabBarIcon: getTabBarIcon("list")
+      drawerIcon: getDrawerItemIcon("list")
     }
   }
 );
@@ -43,7 +48,7 @@ const FavoritesStack = StackNavigator(
   {
     initialRouteName: "Favorites",
     navigationOptions: {
-      tabBarIcon: getTabBarIcon("star")
+      drawerIcon: getDrawerItemIcon("star")
     }
   }
 );
@@ -61,12 +66,12 @@ const UserStack = StackNavigator(
     mode: "modal",
     initialRouteName: "User",
     navigationOptions: {
-      tabBarIcon: getTabBarIcon("person")
+      drawerIcon: getDrawerItemIcon("person")
     }
   }
 );
 
-export default TabNavigator(
+export default DrawerNavigator(
   {
     Contacts: {
       screen: ContactsStack
@@ -79,17 +84,17 @@ export default TabNavigator(
     }
   },
   {
-    initialRouteName: "Contacts",
-    tabBarPosition: "bottom",
-    tabBarOptions: {
-      style: {
-        backgroundColor: colors.greyLight
-      },
-      showLabel: false,
-      showIcon: true,
-      activeTintColor: colors.blue,
-      inactiveTintColor: colors.greyDark,
-      renderIndicator: () => null
-    }
+    initialRouteName: "Contacts"
+    // tabBarPosition: "bottom",
+    // tabBarOptions: {
+    //   style: {
+    //     backgroundColor: colors.greyLight
+    //   },
+    //   showLabel: false,
+    //   showIcon: true,
+    //   activeTintColor: colors.blue,
+    //   inactiveTintColor: colors.greyDark,
+    //   renderIndicator: () => null
+    // }
   }
 );
