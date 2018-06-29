@@ -1,7 +1,7 @@
 import { StackNavigator } from "react-navigation";
 
-import Contacts from "./src/screens/Contacts";
-import Profile from "./src/screens/Profile";
+import Contacts from "./screens/Contacts";
+import Profile from "./screens/Profile";
 
 export default StackNavigator({
   Contacts: {
