@@ -26,7 +26,7 @@ export default class User extends Component {
   });
 
   state = {
-    contacts: store.getState().contacts,
+    user: store.getState().user,
     loading: store.getState().isFetchingContacts,
     error: store.getState().error
   };
@@ -34,7 +34,7 @@ export default class User extends Component {
   async componentDidMount() {
     this.unsubscribe = store.onChange(() =>
       this.setState({
-        contacts: store.getState().contacts,
+        user: store.getState().user,
         loading: store.getState().isFetchingContacts,
         error: store.getState().error
       })
