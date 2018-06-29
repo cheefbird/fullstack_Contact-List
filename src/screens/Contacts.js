@@ -8,7 +8,7 @@ import {
 } from "react-native";
 
 import ContactListItem from "../components/ContactListItem";
-import { fetchContacts } from "../../utils/api";
+import { fetchContacts } from "../utils/api";
 
 const keyExtractor = ({ phone }) => phone;
 
