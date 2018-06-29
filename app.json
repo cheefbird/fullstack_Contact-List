@@ -1,5 +1,7 @@
 {
   "expo": {
+    "name": "Contact List",
+    "slug": "contact-list",
     "sdkVersion": "27.0.0"
   }
 }
