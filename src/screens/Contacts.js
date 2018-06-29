@@ -40,14 +40,14 @@ export default class Contacts extends Component {
     const {
       navigation: { navigate }
     } = this.props;
-    const { name, avatar, phone } = item;
+    const { id, name, avatar, phone } = item;
 
     return (
       <ContactListItem
         name={name}
         avatar={avatar}
         phone={phone}
-        onPress={() => navigate("Profile")}
+        onPress={() => navigate("Profile", { contact: item })}
       />
     );
   };
